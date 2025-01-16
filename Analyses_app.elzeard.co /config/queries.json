@@ -1,0 +1,10 @@
+{
+    "user_navigation": {
+        "query": "SELECT p.properties->>'email' AS email, e.properties->>'$pathname' AS pathname, e.properties->>'$sent_at' AS sent_at, 'app.elzeard.co' AS host, e.properties->>'$group_1' AS Groupe FROM public.events e JOIN public.persons p ON e.distinct_id = p.distinct_id WHERE e.timestamp BETWEEN %s AND %s AND e.properties->>'$group_1' = 'TRIAL'",
+        "headers": ["person.properties.email", "properties.$pathname", "properties.$sent_at", "host", "Groupe"],
+        "date_range": {
+            "start_date": "2025-01-01",
+            "end_date": "2025-01-16"
+        }
+    }
+}
